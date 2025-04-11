@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+session_start();
 
 use App\Application\Handlers\HttpErrorHandler;
 use App\Application\Handlers\ShutdownHandler;
@@ -12,10 +13,11 @@ use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (false) { // Should be set to true in production
+if (true) { // Should be set to true in production
 	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
 }
 
